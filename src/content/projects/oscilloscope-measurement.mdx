@@ -1,0 +1,34 @@
+---
+title: "Hardware Measurement: Transistors & Oscilloscope Verification"
+description: "Hands-on lab verification of Transistor setups (Switch & Audio Pre-Amplifier configurations) using digital oscilloscopes, function generators, and proper documentation."
+tags: ["Hardware Validation", "Oscilloscope", "Lab Work"]
+thumbnailSrc: ""
+---
+
+# Overview
+
+Moving from simulation to physical reality involves introducing tolerances and parasitic impedances. This project details the physical testing of semiconductor components, specifically focusing on biasing a BC547 BJT on a breadboard.
+
+## Problem & Constraints
+* Manually determine the component working values for a Diode (1N4005) vs an LED.
+* Bias a BC547 NPN transistor to act as a logic switch.
+* Implement a Transistor as a small-signal AC amplifier (Microphone Pre-Amp) ensuring $A_U = -10$.
+
+## Approach / Design Decisions
+The practical lab approach relied heavily on calculating load-lines. Component values were snapped to the nearest standard E12 resistor series block.
+Measurements for the static operating point ($I_B, I_C, U_{CE}$) were mapped out using dual-multimeter setups before injecting the small AC signal.
+
+## Evidence
+
+### Core Laboratory Steps:
+1. **E12 Resistor Selection**: Calculated $R_C$ and $R_E$ to achieve the $A_U = -10$ gain, translating ideal mathematical values into available physical components.
+2. **DC Operating Point**: Sourced $5V$ DC, mapping out the base biasing resistor divider network.
+3. **Dynamic Testing**: Injected a 50Hz sine wave via the Function Generator. Captured the input and amplified inverted output directly on the Oscilloscope.
+
+![Breadboard Setup for Transistor Amplifier](/projects/oscilloscope/breadboard.jpg)
+<br/>
+
+![Oscilloscope Capture showing AU=-10 Gain](/projects/oscilloscope/capture.png)
+
+## Results & Learnings
+The hardware matched the expected load-line predictions. A crucial learning outcome was handling the differences between theoretical simulation and physical execution—such as component drift within the E12 series tolerances affecting the final measured amplification factor $\beta$.

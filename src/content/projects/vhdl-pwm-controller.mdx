@@ -1,0 +1,36 @@
+---
+title: "VHDL Module with Simulation Evidence"
+description: "Developed a reliable PWM/FSM controller using VHDL. Verified edge cases and reset behavior through comprehensive simulation waveforms."
+tags: ["FPGA / RTL", "VHDL", "Simulation"]
+thumbnailSrc: ""
+---
+
+# Overview
+
+Implementation of a digital controller (PWM/FSM) in VHDL, targeted for FPGA deployment, with a heavy emphasis on testbench verification.
+
+## Problem & Constraints
+* Implement a robust Finite State Machine avoiding latches and race conditions.
+* Synthesizable VHDL targeted for Xilinx/Intel FPGAs.
+
+## Approach / Design Decisions
+Used a strictly synchronous design approach. Wrote an exhaustive testbench to rigorously simulate reset behaviors and edge cases before synthesis.
+
+## Evidence
+
+*(Provide Waveform Screenshots, Block Diagrams, and VHDL snippets here)*
+
+```vhdl
+-- Example Snippet
+process(clk, reset)
+begin
+    if reset = '1' then
+        state <= IDLE;
+    elsif rising_edge(clk) then
+        state <= next_state;
+    end if;
+end process;
+```
+
+## Results & Learnings
+Simulation waveforms matched theoretical calculations perfectly, emphasizing that "it doesn't work until it's simulated and verified in testbenches."

@@ -19,11 +19,11 @@ export interface ProjectData extends ProjectMeta {
 // Temporary dummy data until MDX files are parsed
 export const FEATURED_PROJECTS: ProjectMeta[] = [
     {
-        title: "KiCad PCB: Design → 3D Render → Soldered Prototype",
+        title: "KiCad PCB Design: LED Chaser System",
         slug: "kicad-pcb-design",
-        description: "Designed a multi-layer PCB from schematic capture to routing. Generated 3D renders and hand-soldered the final functional prototype.",
-        tags: ["Hardware Design", "KiCad", "Soldering"],
-        thumbnailSrc: ""
+        description: "From Concept to 3D PCB: Designing a manual and automatic LED chaser system using CD4017 and NE555 timers within strict layout constraints.",
+        tags: ["Hardware Design", "KiCad", "PCB Routing"],
+        thumbnailSrc: "/projects/kicad/image1.png"
     },
     {
         title: "VHDL Module with Simulation Evidence",
@@ -45,6 +45,13 @@ export const FEATURED_PROJECTS: ProjectMeta[] = [
         description: "Hands-on lab verification of Transistor setups using digital oscilloscopes, function generators, and proper documentation.",
         tags: ["Hardware Validation", "Oscilloscope", "Lab Work"],
         thumbnailSrc: ""
+    },
+    {
+        title: "Hardware Assembly & Soldering: 3×3×3 LED Cube",
+        slug: "soldering-led-cube",
+        description: "Precision soldering of both SMD and THT components, mechanical alignment of a 3D LED structure, and system integration with an Arduino Nano.",
+        tags: ["Soldering", "Hardware Validation", "PCB Assembly"],
+        thumbnailSrc: "/projects/soldering/image1.jpg"
     }
 ];
 export async function getFeaturedProjects(): Promise<ProjectMeta[]> {

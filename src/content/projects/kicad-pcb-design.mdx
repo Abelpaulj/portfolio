@@ -1,25 +1,79 @@
 ---
-title: "KiCad PCB: Design → 3D Render → Soldered Prototype"
-description: "Designed a multi-layer PCB from schematic capture to routing. Generated 3D renders and hand-soldered the final functional prototype."
-tags: ["Hardware Design", "KiCad", "Soldering"]
-thumbnailSrc: ""
+title: "KiCad PCB Design: LED Chaser System"
+description: "From Concept to 3D PCB: Designing a manual and automatic LED chaser system using CD4017 and NE555 timers within strict layout constraints."
+tags: ["Hardware Design", "KiCad", "PCB Routing"]
+thumbnailSrc: "/projects/kicad/image1.png"
 ---
 
 # Overview
+**Software:** KiCad  
+**Board Size:** 80 mm × 40 mm  
+**Author:** Abel Paul John  
 
-This project showcases the complete hardware development lifecycle of a custom PCB, moving from initial schematic capture to physical realization.
+## Section 1: Task 1 – Manual LED Chaser (CD4017 + Push Button)
 
-## Problem & Constraints
-* Design a reliable multi-layer board ensuring signal integrity.
-* Constraints strictly limited to 2-layer routing with minimal vias.
-* Component footprint selection optimized for hand-soldering (THT & SMD 0805 or larger).
+*(Drop your first screenshot into `public/projects/kicad/` and name it `image1.png`)*
+![Task 1 Schematic – CD4017 + Push Button](/projects/kicad/image1.png)
 
-## Approach / Design Decisions
-I prioritized a solid ground plane to reduce noise and carefully managed trace widths based on expected current loads.
+In the first task, I designed a manual LED chaser circuit using the CD4017 decade counter. The idea is simple: each time the push button is pressed, the counter advances to the next output and turns on the next LED.
 
-## Evidence
+To make the circuit stable, I added a debounce network using a resistor and a capacitor. This prevents unwanted multiple triggers caused by mechanical button bouncing. A pull-up resistor ensures that the clock input always has a defined logic level when the button is not pressed.
 
-*(Provide images of Schematics, Routing, 3D render here)*
+Each output of the CD4017 is connected to one LED through a current-limiting resistor. This protects the LEDs and guarantees uniform brightness.
 
-## Results & Learnings
-The finalized board was successfully assembled and tested. A key takeaway was the importance of thermal reliefs on ground polygons to make hand-soldering significantly easier.
+The schematic design focused on correct pin connections, clean signal flow, and proper power distribution.
+
+*(Drop your second screenshot into `public/projects/kicad/` and name it `image2.png`)*
+![PCB Layout Screenshot – Routed Board of Task 1](/projects/kicad/image2.png)
+
+After completing the schematic, I moved to the PCB layout. The board size was fixed at 80 mm × 40 mm, and strict routing rules were applied. Only horizontal, vertical, and 45-degree traces were allowed. The number of vias was limited, so component placement had to be optimized carefully before routing.
+
+I arranged the LEDs in a straight row to create a clean visual sequence. The CD4017 was placed close to the LED resistors to reduce trace length. Power and ground traces were made wider than signal traces to improve reliability.
+
+The final routing is structured, readable, and easy to manufacture.
+
+*(Drop your third screenshot into `public/projects/kicad/` and name it `image3.png`)*
+![3D View – Task 1 Front View](/projects/kicad/image3.png)
+
+The 3D view confirms that all components are correctly aligned and properly spaced. The silkscreen labels are readable, and the LEDs are positioned in a clean linear arrangement.
+
+This validation step ensures that the board is ready for fabrication and manual soldering.
+
+---
+
+## Section 2: Task 2 – Automatic LED Chaser (NE555 + CD4017)
+
+*(Drop your fourth screenshot into `public/projects/kicad/` and name it `image4.png`)*
+![Schematic Screenshot – NE555 + CD4017](/projects/kicad/image4.png)
+
+In the second task, I replaced the push button with an NE555 timer configured in astable mode. The goal was to generate a continuous clock signal so that the LEDs automatically move in sequence.
+
+The NE555 produces a square wave at its output pin. This signal is connected to the clock input of the CD4017. I calculated the frequency using the astable timing formula and selected resistor values from the E12 series to achieve approximately 4 Hz. This frequency creates a smooth running light effect.
+
+Additional bypass capacitors were placed near the IC supply pins to ensure stable operation.
+
+*(Drop your fifth screenshot into `public/projects/kicad/` and name it `image5.png`)*
+![PCB Layout Screenshot – Task 2 Routed Board](/projects/kicad/image5.png)
+
+The second PCB design is more complex because of the additional timer IC. I reorganized the placement to maintain logical signal flow from the NE555 to the CD4017.
+
+The clock trace was kept short to reduce noise. Timing components were placed close to the NE555. Power routing was carefully managed to ensure stable voltage supply for both ICs.
+
+Despite the added complexity, the board still follows all layout constraints, including limited vias and controlled routing angles.
+
+*(Drop your sixth screenshot into `public/projects/kicad/` and name it `image6.png`)*
+![3D View – Task 2 Front View](/projects/kicad/image6.png)
+
+The 3D rendering confirms correct component orientation and spacing. The LED row remains symmetrical, and both ICs are clearly positioned. The overall layout appears professional and production-ready.
+
+---
+
+## Final Section: Engineering Approach & Learning Outcome
+
+Through these two tasks, I demonstrated the complete workflow from schematic design to final PCB layout and 3D validation.
+
+I applied structured engineering thinking: first understanding the functional requirements, then designing the circuit, optimizing component placement, defining net classes, routing signals carefully, and finally verifying the board in 3D.
+
+The progression from a manual clock system to an automatic timer-based system shows both conceptual understanding and technical improvement.
+
+This project reflects my skills in digital electronics, timer circuits, PCB layout discipline, and hardware development using KiCad.

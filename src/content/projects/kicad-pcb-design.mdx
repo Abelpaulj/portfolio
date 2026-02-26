@@ -12,7 +12,7 @@ thumbnailSrc: "/projects/kicad/image1.png"
 
 ## Section 1: Task 1 – Manual LED Chaser (CD4017 + Push Button)
 
-*(Drop your first screenshot into `public/projects/kicad/` and name it `image1.png`)*
+
 ![Task 1 Schematic – CD4017 + Push Button](/projects/kicad/image1.png)
 
 In the first task, I designed a manual LED chaser circuit using the CD4017 decade counter. The idea is simple: each time the push button is pressed, the counter advances to the next output and turns on the next LED.
@@ -23,7 +23,7 @@ Each output of the CD4017 is connected to one LED through a current-limiting res
 
 The schematic design focused on correct pin connections, clean signal flow, and proper power distribution.
 
-*(Drop your second screenshot into `public/projects/kicad/` and name it `image2.png`)*
+
 ![PCB Layout Screenshot – Routed Board of Task 1](/projects/kicad/image2.png)
 
 After completing the schematic, I moved to the PCB layout. The board size was fixed at 80 mm × 40 mm, and strict routing rules were applied. Only horizontal, vertical, and 45-degree traces were allowed. The number of vias was limited, so component placement had to be optimized carefully before routing.
@@ -32,7 +32,7 @@ I arranged the LEDs in a straight row to create a clean visual sequence. The CD4
 
 The final routing is structured, readable, and easy to manufacture.
 
-*(Drop your third screenshot into `public/projects/kicad/` and name it `image3.png`)*
+
 ![3D View – Task 1 Front View](/projects/kicad/image3.png)
 
 The 3D view confirms that all components are correctly aligned and properly spaced. The silkscreen labels are readable, and the LEDs are positioned in a clean linear arrangement.
@@ -43,7 +43,7 @@ This validation step ensures that the board is ready for fabrication and manual 
 
 ## Section 2: Task 2 – Automatic LED Chaser (NE555 + CD4017)
 
-*(Drop your fourth screenshot into `public/projects/kicad/` and name it `image4.png`)*
+
 ![Schematic Screenshot – NE555 + CD4017](/projects/kicad/image4.png)
 
 In the second task, I replaced the push button with an NE555 timer configured in astable mode. The goal was to generate a continuous clock signal so that the LEDs automatically move in sequence.
@@ -52,7 +52,7 @@ The NE555 produces a square wave at its output pin. This signal is connected to 
 
 Additional bypass capacitors were placed near the IC supply pins to ensure stable operation.
 
-*(Drop your fifth screenshot into `public/projects/kicad/` and name it `image5.png`)*
+
 ![PCB Layout Screenshot – Task 2 Routed Board](/projects/kicad/image5.png)
 
 The second PCB design is more complex because of the additional timer IC. I reorganized the placement to maintain logical signal flow from the NE555 to the CD4017.
@@ -61,7 +61,7 @@ The clock trace was kept short to reduce noise. Timing components were placed cl
 
 Despite the added complexity, the board still follows all layout constraints, including limited vias and controlled routing angles.
 
-*(Drop your sixth screenshot into `public/projects/kicad/` and name it `image6.png`)*
+
 ![3D View – Task 2 Front View](/projects/kicad/image6.png)
 
 The 3D rendering confirms correct component orientation and spacing. The LED row remains symmetrical, and both ICs are clearly positioned. The overall layout appears professional and production-ready.

@@ -53,7 +53,7 @@ export function HomeHeroCTAs() {
             <CTAButton href="/projects" variant="primary" icon={<ArrowRight className="w-4 h-4" />}>
                 View Case Studies
             </CTAButton>
-            <CTAButton href="mailto:abelpauj@gmail.com" variant="outline" icon={<Mail className="w-4 h-4" />} external>
+            <CTAButton href="mailto:abelpaulj@gmail.com" variant="outline" icon={<Mail className="w-4 h-4" />} external>
                 Contact Me
             </CTAButton>
         </div>

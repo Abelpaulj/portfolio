@@ -59,43 +59,39 @@ export default async function Home() {
                         <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">Hardware Design</h3>
                         <ul className="space-y-2 text-[var(--color-text-secondary)] text-sm">
                             <li>KiCad Schematic & PCB Design</li>
+                            <li>Circuit Simulation (Falstad)</li>
+                            <li>Breadboard Prototyping</li>
                             <li>Soldering (THT & SMD)</li>
-                            <li>Circuit Analysis & Component Selection</li>
+                            <li>Component Handling & Lab Safety</li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">FPGA / RTL</h3>
                         <ul className="space-y-2 text-[var(--color-text-secondary)] text-sm">
                             <li>VHDL Digital Logic Design</li>
-                            <li>FSMs & Timing Analysis</li>
-                            <li>Simulation Waveform Verification</li>
+                            <li>Finite State Machines (FSM)</li>
+                            <li>Waveform Verification / Simulation</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">Test & Validation</h3>
+                        <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">Test & Measurement</h3>
                         <ul className="space-y-2 text-[var(--color-text-secondary)] text-sm">
-                            <li>Oscilloscopes & Function Generators</li>
-                            <li>Falstad Circuit Simulation</li>
-                            <li>Measurement Correlation (Expected vs Measured)</li>
+                            <li>Oscilloscope & Function Generator Measurements</li>
+                            <li>Metrology: Measurement & Calibration</li>
+                            <li>Frequency & AC Signal Analysis</li>
+                            <li>Circuit Analysis (Series/Parallel, Ohm’s Law)</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">Software Tooling</h3>
+                        <h3 className="font-mono text-sm text-[var(--color-accent)] mb-3 border-b border-[var(--color-bg-secondary)] pb-2 uppercase tracking-wider">Software & Tools</h3>
                         <ul className="space-y-2 text-[var(--color-text-secondary)] text-sm">
-                            <li>TypeScript, React, Next.js</li>
-                            <li>Data Visualization (Web)</li>
-                            <li>Git & Version Control Workflow</li>
+                            <li>TypeScript, JavaScript, Java</li>
+                            <li>HTML/CSS, PHP/MySQL (Basic)</li>
+                            <li>Git & Version Control</li>
+                            <li>Microsoft Office, Google Workspace</li>
                         </ul>
                     </div>
                 </div>
-            </section>
-
-            {/* 5. Mini About */}
-            <section className="container mx-auto px-4 md:px-8 max-w-4xl text-center flex flex-col items-center gap-6">
-                <Code className="w-10 h-10 text-[var(--color-bg-secondary)]" />
-                <p className="text-lg md:text-xl text-[var(--color-text-primary)] max-w-2xl leading-relaxed">
-                    I bring a unique bridge of international experience—hailing from India and now engineering in Germany. Through extensive lab work and hands-on projects, I approach hardware with a documentation-first mindset and build testing software to prove my designs work predictably.
-                </p>
             </section>
         </div>
     );

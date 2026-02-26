@@ -1,34 +1,31 @@
 ---
-title: "Hardware Measurement: Transistors & Oscilloscope Verification"
-description: "Hands-on lab verification of Transistor setups (Switch & Audio Pre-Amplifier configurations) using digital oscilloscopes, function generators, and proper documentation."
+title: "RC Filter Measurement: Oscilloscope Analysis"
+description: "Analyzing the behavior of RC high-pass and low-pass filters using a function generator and an oscilloscope to evaluate frequency response and phase shifts."
 tags: ["Hardware Validation", "Oscilloscope", "Lab Work"]
-thumbnailSrc: ""
+thumbnailSrc: "/projects/oscilloscope/image1.jpg"
 ---
 
 # Overview
+**Laboratory:** RC High-Pass and Low-Pass Filters  
+**Author:** Abel Paul John  
 
-Moving from simulation to physical reality involves introducing tolerances and parasitic impedances. This project details the physical testing of semiconductor components, specifically focusing on biasing a BC547 BJT on a breadboard.
+## Oscilloscope Analysis
 
-## Problem & Constraints
-* Manually determine the component working values for a Diode (1N4005) vs an LED.
-* Bias a BC547 NPN transistor to act as a logic switch.
-* Implement a Transistor as a small-signal AC amplifier (Microphone Pre-Amp) ensuring $A_U = -10$.
+*(Drop your first screenshot into `public/projects/oscilloscope/` and name it `image1.jpg`)*
+<img src="/projects/oscilloscope/image1.jpg" alt="Oscilloscope + function generator photo" className="rounded-xl shadow-lg border border-zinc-800/50 max-w-[600px] w-full mx-auto" />
 
-## Approach / Design Decisions
-The practical lab approach relied heavily on calculating load-lines. Component values were snapped to the nearest standard E12 resistor series block.
-Measurements for the static operating point ($I_B, I_C, U_{CE}$) were mapped out using dual-multimeter setups before injecting the small AC signal.
+This experiment focused on analyzing the behavior of RC high-pass and low-pass filters using a function generator and an oscilloscope. A sinusoidal input signal was applied to the circuit, and both the input voltage and output voltage were measured simultaneously. The oscilloscope display shows the waveform and frequency in real time, allowing direct observation of amplitude changes and phase shifts between the signals.
 
-## Evidence
+*(Drop your second screenshot into `public/projects/oscilloscope/` and name it `image2.png`)*
+<img src="/projects/oscilloscope/image2.png" alt="High-pass filter circuit diagram" className="rounded-xl shadow-sm border border-zinc-800/50 max-w-[500px] w-full mx-auto" />
 
-### Core Laboratory Steps:
-1. **E12 Resistor Selection**: Calculated $R_C$ and $R_E$ to achieve the $A_U = -10$ gain, translating ideal mathematical values into available physical components.
-2. **DC Operating Point**: Sourced $5V$ DC, mapping out the base biasing resistor divider network.
-3. **Dynamic Testing**: Injected a 50Hz sine wave via the Function Generator. Captured the input and amplified inverted output directly on the Oscilloscope.
+The high-pass filter was built using a resistor and capacitor connected in series. At lower frequencies, the output voltage is significantly reduced, while higher frequencies pass through more easily. By measuring the period of the waveform and the time shift between input and output, I calculated the measured frequency and phase difference. This allowed me to verify the theoretical behavior of the high-pass filter and observe how signal attenuation changes with frequency.
 
-![Breadboard Setup for Transistor Amplifier](/projects/oscilloscope/breadboard.jpg)
-<br/>
+*(Drop your third screenshot into `public/projects/oscilloscope/` and name it `image3.png`)*
+<img src="/projects/oscilloscope/image3.png" alt="Low-pass filter circuit diagram" className="rounded-xl shadow-sm border border-zinc-800/50 max-w-[500px] w-full mx-auto" />
 
-![Oscilloscope Capture showing AU=-10 Gain](/projects/oscilloscope/capture.png)
+The low-pass filter was constructed using the same components arranged in a different configuration. In this case, low frequencies pass through with minimal attenuation, while higher frequencies are reduced. The oscilloscope was adjusted to display one full period of the signal to ensure accurate measurement of amplitude and phase shift. The experiment confirmed the expected frequency response and demonstrated the practical difference between high-pass and low-pass filter behavior.
 
-## Results & Learnings
-The hardware matched the expected load-line predictions. A crucial learning outcome was handling the differences between theoretical simulation and physical execution—such as component drift within the E12 series tolerances affecting the final measured amplification factor $\beta$.
+## Conclusion
+
+This laboratory task demonstrates practical skills in signal measurement, waveform analysis, and frequency response evaluation. It shows my ability to connect theoretical transfer functions with real electrical measurements and to analyze analog circuits using professional laboratory equipment.

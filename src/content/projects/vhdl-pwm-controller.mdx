@@ -1,36 +1,55 @@
 ---
-title: "VHDL Module with Simulation Evidence"
-description: "Developed a reliable PWM/FSM controller using VHDL. Verified edge cases and reset behavior through comprehensive simulation waveforms."
-tags: ["FPGA / RTL", "VHDL", "Simulation"]
-thumbnailSrc: ""
+title: "VHDL Projects – Combinational, Sequential, PWM"
+description: "Step-by-step implementation of VHDL designs on an affordabable FPGA, moving from combinational logic to time-based complete PWM systems."
+tags: ["FPGA / RTL", "VHDL", "Hardware Validation"]
+thumbnailSrc: "/projects/vhdl/image1.png"
 ---
 
 # Overview
+**Platform:** Raspberry Pi + ICO FPGA Board + Exp-Board  
+**Language:** VHDL  
+**Author:** Abel Paul John  
 
-Implementation of a digital controller (PWM/FSM) in VHDL, targeted for FPGA deployment, with a heavy emphasis on testbench verification.
+In this project, I implemented four VHDL designs on an FPGA and verified each one directly on real hardware. The goal was to move step by step from basic combinational logic to time-based digital systems. For every task, I wrote the VHDL code, synthesized it, programmed the FPGA, and confirmed the behavior by observing the RGB LEDs and LED row on the Exp-Board. The images below are live hardware proof that each task worked as intended.
 
-## Problem & Constraints
-* Implement a robust Finite State Machine avoiding latches and race conditions.
-* Synthesizable VHDL targeted for Xilinx/Intel FPGAs.
+---
 
-## Approach / Design Decisions
-Used a strictly synchronous design approach. Wrote an exhaustive testbench to rigorously simulate reset behaviors and edge cases before synthesis.
+## Task 1 – Combinational Logic with Buttons (Minterms/Maxterms)
 
-## Evidence
+*(Drop your first screenshot into `public/projects/vhdl/` and name it `image1.png`)*
+<img src="/projects/vhdl/image1.png" alt="Proof for Task 1" className="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-700/50 max-w-[380px] w-full mx-auto my-8" />
 
-*(Provide Waveform Screenshots, Block Diagrams, and VHDL snippets here)*
+In the first task, I built a purely combinational design where the outputs depend only on the current input buttons. LED7 was controlled only by one switch, so it turned white when the switch was active and turned off when it was not. LED6 changed color depending on how many push buttons were pressed, which made it easy to test correctness because every input combination produced a clear visual result. After programming the FPGA, I tested multiple button combinations and confirmed that the LED behavior matched the intended logic every time.
 
-```vhdl
--- Example Snippet
-process(clk, reset)
-begin
-    if reset = '1' then
-        state <= IDLE;
-    elsif rising_edge(clk) then
-        state <= next_state;
-    end if;
-end process;
-```
+---
 
-## Results & Learnings
-Simulation waveforms matched theoretical calculations perfectly, emphasizing that "it doesn't work until it's simulated and verified in testbenches."
+## Task 2 – Function Table Logic with an 8-bit Counter
+
+*(Drop your second screenshot into `public/projects/vhdl/` and name it `image2.png`)*
+<img src="/projects/vhdl/image2.png" alt="Proof for Task 2" className="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-700/50 max-w-[380px] w-full mx-auto my-8" />
+
+In the second task, I used a clock divider and an 8-bit counter to create time-dependent LED behavior. The counter continuously counted through values, and specific value ranges activated specific colors on LED6 and LED7. This task was important because it showed how to implement larger logic conditions cleanly using comparisons instead of writing long Boolean expressions. When I ran the design on hardware, the LEDs changed colors exactly at the defined counter intervals and repeated continuously without glitches.
+
+---
+
+## Task 3 – Sequential Bit Pattern Generation
+
+*(Drop your third screenshot into `public/projects/vhdl/` and name it `image3.png`)*
+<img src="/projects/vhdl/image3.png" alt="Proof for Task 3" className="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-700/50 max-w-[380px] w-full mx-auto my-8" />
+
+In the third task, I created a repeating LED pattern using a process-based sequential design. Instead of reacting only to inputs, the design advanced step by step over time using a counter. The LED row displayed an alternating pattern such as 10101010, and then reversed to 01010101, creating a clear moving visual effect. This task helped me understand how FPGA designs can be made “time-controlled” using clocked processes, and the hardware output confirmed that the sequence progressed smoothly and repeatedly.
+
+---
+
+## Task 4 – PWM for RGB LED Brightness Control (FSM-based)
+
+*(Drop your fourth screenshot into `public/projects/vhdl/` and name it `image4.png`)*
+<img src="/projects/vhdl/image4.png" alt="Proof for Task 4" className="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-zinc-700/50 max-w-[380px] w-full mx-auto my-8" />
+
+In the fourth task, I implemented pulse width modulation to control LED brightness using digital logic. I generated PWM signals using counters and finite state machines and connected the duty cycle to DIP switch values. When I changed the switches, the brightness of the LED channels changed smoothly, showing that the duty cycle control worked correctly. This task demonstrated an important real-world concept because PWM is widely used in embedded systems to control motors, LEDs, and power electronics efficiently.
+
+---
+
+## Conclusion
+
+This project demonstrates that I can design, implement, and verify VHDL systems on real FPGA hardware. Across the four tasks, I showed strong understanding of combinational logic, counter-based control, sequential processes, and PWM using state-machine design. Most importantly, each design was tested on physical hardware and confirmed visually, which proves that the implementations were not only correct in theory but also reliable in practice.

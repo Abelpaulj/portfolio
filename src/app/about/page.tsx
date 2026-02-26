@@ -12,28 +12,22 @@ export default function AboutPage() {
             <h1 className="text-4xl font-bold tracking-tight mb-8">About Me</h1>
 
             <div className="prose prose-invert prose-zinc max-w-none text-lg text-[var(--color-text-secondary)] space-y-6">
-                <p>
-                    I'm an engineering student with a deep passion for the space where hardware meets software. Based in Germany, originally from India, my journey is driven by a curiosity to understand systems from the bare metal up to the interface.
+                <p className="leading-relaxed">
+                    I’m <strong className="text-[var(--color-text-primary)]">Abel Paul John</strong>, an engineering student from India currently based in Schorndorf, Germany. I’m studying B.Sc. Electrical Engineering and Information Technology at Ravensburg-Weingarten University of Applied Sciences (RWU), where I focus on electronics, measurement technology, and digital systems.
                 </p>
-
-                <p>
-                    My approach to engineering is inherently hands-on. Whether I'm designing a multi-layer PCB in KiCad, writing Synthesizable VHDL, or debugging circuits with an oscilloscope, I believe in one rule: <strong>It doesn't work until it's measured and documented.</strong>
+                <p className="leading-relaxed">
+                    I enjoy working at the intersection of hardware and software. In university labs, I build and test circuits on breadboards, measure AC signals using oscilloscopes and function generators, and apply metrology methods for accurate measurement and calibration. I also design and simulate circuits in KiCad, practice THT/SMD soldering, and develop digital designs in VHDL, including logic functions and finite state machines.
                 </p>
-
-                <p>
-                    I've actively cultivated bilingual and multi-lingual capabilities to thrive in international environments, with strong proficiency in English and German.
+                <p className="leading-relaxed">
+                    Alongside my studies, I gained industry experience as a Software Developer Intern, where I tested websites, fixed issues, and contributed to a full-stack TypeScript application while building responsive web interfaces with JavaScript. I speak English (C1) and German (B2), and I’m comfortable working in international environments.
                 </p>
 
                 <div className="bg-[var(--color-bg-secondary)] border border-[var(--color-bg-secondary)] p-6 rounded-lg my-10 not-prose">
-                    <h3 className="font-bold text-xl text-[var(--color-text-primary)] mb-2">The Documentation Mindset</h3>
-                    <p className="text-[var(--color-text-secondary)] text-base">
-                        Good hardware is useless if nobody knows how to use it or how it was tested. I treat documentation, clear schematics, and clean simulation waveforms as first-class citizens in my workflow.
+                    <h3 className="font-bold text-xl text-[var(--color-text-primary)] mb-2">Looking Forward</h3>
+                    <p className="text-[var(--color-accent)] font-medium text-base">
+                        I’m currently looking for internships or working student roles in Embedded Systems, FPGA/RTL, Electronics, or Hardware Testing/Validation in Germany, and I’m open to relocating for the right opportunity.
                     </p>
                 </div>
-
-                <p>
-                    Currently, I am looking for <strong>Internships or Working Student</strong> roles in Embedded Systems, FPGA, or Hardware Validation, primarily in Germany. I am open to relocating for the right opportunity.
-                </p>
             </div>
 
             <div className="mt-12 pt-8 border-t border-[var(--color-bg-secondary)]">

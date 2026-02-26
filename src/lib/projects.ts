@@ -26,11 +26,11 @@ export const FEATURED_PROJECTS: ProjectMeta[] = [
         thumbnailSrc: "/projects/kicad/image1.png"
     },
     {
-        title: "VHDL Module with Simulation Evidence",
+        title: "VHDL Projects – Combinational, Sequential, PWM",
         slug: "vhdl-pwm-controller",
-        description: "Developed a reliable PWM/FSM controller using VHDL. Verified edge cases and reset behavior through comprehensive simulation waveforms.",
-        tags: ["FPGA / RTL", "VHDL", "Simulation"],
-        thumbnailSrc: ""
+        description: "Implemented and verified combinational logic, counters, sequential bit patterns, and FSM-based PWM directly on real FPGA hardware.",
+        tags: ["FPGA / RTL", "VHDL", "Hardware Validation"],
+        thumbnailSrc: "/projects/vhdl/image1.png"
     },
     {
         title: "Precision Analog Design: Op-Amp Circuits in Falstad",
@@ -40,11 +40,11 @@ export const FEATURED_PROJECTS: ProjectMeta[] = [
         thumbnailSrc: "/projects/falstad/bridge.png"
     },
     {
-        title: "Hardware Measurement: Transistors & Oscilloscope",
+        title: "RC Filter Measurement: Oscilloscope Analysis",
         slug: "oscilloscope-measurement",
-        description: "Hands-on lab verification of Transistor setups using digital oscilloscopes, function generators, and proper documentation.",
+        description: "Analyzing the behavior of RC high-pass and low-pass filters using a function generator and an oscilloscope to evaluate frequency response and phase shifts.",
         tags: ["Hardware Validation", "Oscilloscope", "Lab Work"],
-        thumbnailSrc: ""
+        thumbnailSrc: "/projects/oscilloscope/image1.jpg"
     },
     {
         title: "Hardware Assembly & Soldering: 3×3×3 LED Cube",

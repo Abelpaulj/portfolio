@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Cpu } from "lucide-react";
+import { Cpu } from "lucide-react";
 
 export default function Navbar() {
     return (
@@ -19,15 +19,6 @@ export default function Navbar() {
                     <Link href="/about" className="text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors">
                         About
                     </Link>
-
-                    <a
-                        href="/cv.pdf"
-                        className="flex items-center gap-2 bg-[var(--color-bg-primary)] border border-[var(--color-bg-secondary)] text-[var(--color-text-primary)] hover:border-[var(--color-accent)] px-4 py-2 rounded-md text-sm font-medium transition-all group"
-                        download
-                    >
-                        <span>CV</span>
-                        <Download className="w-4 h-4 text-[var(--color-text-secondary)] group-hover:text-[var(--color-accent)] transition-colors" />
-                    </a>
                 </nav>
             </div>
         </header>

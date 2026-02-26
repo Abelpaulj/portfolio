@@ -30,6 +30,26 @@ export default function AboutPage() {
                 </div>
             </div>
 
+            <div className="mt-16">
+                <h2 className="text-2xl font-bold mb-6 border-b border-[var(--color-bg-secondary)] pb-2 tracking-tight">Experience</h2>
+
+                <div className="relative border-l border-[var(--color-bg-secondary)] pl-6 ml-3 space-y-8">
+                    <div className="relative">
+                        <div className="absolute w-3 h-3 bg-[var(--color-accent)] rounded-full -left-[1.95rem] top-1.5 border-4 border-[var(--color-bg-primary)]"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                            <h3 className="text-xl font-bold text-[var(--color-text-primary)]">Software Developer Intern</h3>
+                            <span className="text-sm font-mono text-[var(--color-text-secondary)] mt-1 sm:mt-0 bg-[var(--color-bg-secondary)] px-2 py-1 rounded">Oct 2024 – Mar 2025</span>
+                        </div>
+                        <p className="text-[var(--color-accent)] font-medium mb-4 text-sm uppercase tracking-wider">VIA SOFTWARE GMBH & CO. KG <span className="text-[var(--color-text-secondary)] normal-case tracking-normal">— Dreieich, Germany</span></p>
+                        <ul className="list-disc list-outside ml-4 space-y-2 text-[var(--color-text-secondary)] text-base">
+                            <li>Conducted comprehensive website testing to identify and resolve functional and UX issues, improving overall system reliability and user experience.</li>
+                            <li>Developed a full-stack web application using TypeScript, implementing efficient frontend and backend components.</li>
+                            <li>Built dynamic and responsive web interfaces with JavaScript, focusing on performance optimization and interactive user experiences.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div className="mt-12 pt-8 border-t border-[var(--color-bg-secondary)]">
                 <h2 className="text-xl font-bold mb-4">Let's connect</h2>
                 <HomeHeroCTAs />

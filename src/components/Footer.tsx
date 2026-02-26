@@ -16,11 +16,11 @@ export default function Footer() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <a href="https://github.com/abelpauljohn" target="_blank" rel="noopener noreferrer" className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 rounded-full transition-all">
+                        <a href="https://github.com/Abelpaulj" target="_blank" rel="noopener noreferrer" className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 rounded-full transition-all">
                             <Github className="w-5 h-5" />
                             <span className="sr-only">GitHub</span>
                         </a>
-                        <a href="https://linkedin.com/in/abelpauljohn" target="_blank" rel="noopener noreferrer" className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 rounded-full transition-all">
+                        <a href="https://www.linkedin.com/in/abel-paul-john-a9a5482b7/" target="_blank" rel="noopener noreferrer" className="p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 rounded-full transition-all">
                             <Linkedin className="w-5 h-5" />
                             <span className="sr-only">LinkedIn</span>
                         </a>
